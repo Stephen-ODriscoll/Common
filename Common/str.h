@@ -15,7 +15,7 @@ public:
     str(const bool b) : std::string(b ? "true" : "false") { }
 
     template<typename T>
-    str(const std::vector<T>& vec, const str sep = ", ")
+    str(const std::vector<T>& vec, const str& sep = ", ")
     {
         std::string();
         if (vec.empty()) return;
@@ -25,7 +25,7 @@ public:
         resize(size() - sep.size());
     }
 
-    void split(std::vector<str>& splits, char delim = ' ') const
+    void split(std::vector<str>& splits, const char delim = ' ') const
     {
         size_t start, end = 0;
         while ((start = find_first_not_of(delim, end)) != npos)
