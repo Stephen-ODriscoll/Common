@@ -4,10 +4,10 @@
 #include <vector>
 class str : public std::string  // std::string with extended functionality
 {
+public:
     using std::string::string;
     using std::string::operator=;
 
-public:
     template<typename T>
     str(const T& t) : std::string(std::to_string(t)) { }
     str(const char c) : std::string(&c, 1) { }
