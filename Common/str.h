@@ -15,9 +15,8 @@ public:
     str(const bool b) : std::string(b ? "true" : "false") { }
 
     template<typename T>
-    str(const std::vector<T>& vec, const str& sep = ", ")
+    str(const std::vector<T>& vec, const str& sep = ", ") : std::string()
     {
-        std::string();
         if (vec.empty()) return;
 
         for (auto& item : vec)
