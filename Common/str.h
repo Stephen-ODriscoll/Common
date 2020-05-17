@@ -51,6 +51,11 @@ public:
         return true;
     }
 
+    std::string string()
+    {
+        return *this;
+    }
+
     float tof(size_t* idx = nullptr) const { return std::stof(*this, idx); }
     double tod(size_t* idx = nullptr) const { return std::stod(*this, idx); }
     long double told(size_t* idx = nullptr) const { return std::stold(*this, idx); }
