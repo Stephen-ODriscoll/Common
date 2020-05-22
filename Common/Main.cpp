@@ -152,7 +152,12 @@ void testStr()
     std::cout << "str(\"test\"): " << str("test") << std::endl;
     std::cout << "str(str(\"test\")): " << str(str("test")) << std::endl;
     std::cout << "str(std::string(\"test\"): " << str(std::string("test")) << std::endl;
-    std::cout << "std::string(str(\"test\")): " << std::string(str("test")) << "\n" << std::endl;
+    std::cout << "std::string(str(\"test\")): " << std::string(str("test")) << std::endl;
+    std::cout << "str(\"test\").string())): " << str("test").string() << std::endl;
+    str test("test"); test.string() = "testModified";
+    const str testConst("test"); testConst.string();
+    std::cout << "str test(\"test\"); test.string() = \"testModified\";: " << test << "\n" << std::endl;
+    
 
     std::cout << "str(1): " << str(1) << std::endl;
     std::cout << "str(1u): " << str(1u) << std::endl;
@@ -160,8 +165,8 @@ void testStr()
     std::cout << "str(1ul): " << str(1ul) << std::endl;
     std::cout << "str(1ll): " << str(1ll) << std::endl;
     std::cout << "str(1ull): " << str(1ull) << std::endl;
-    std::cout << "str(1.f): " << str(1.f) << "\n" << std::endl;
-    std::cout << "str(1.): " << str(1.) << std::endl;
+    std::cout << "str(1.f): " << str(1.f) << std::endl;
+    std::cout << "str(1.): " << str(1.) << "\n" << std::endl;
     
 
     std::cout << "str(true): " << str(true) << std::endl;
@@ -178,7 +183,7 @@ void testStr()
     std::cout << "str(\"yes\").equals(\"YES\"): " << str("yes").equals("YES") << "\n" << std::endl;
 
     std::cout << "str(\"yes\").equalsIgnoreCase(\"NO\"):  " << str("yes").equalsIgnoreCase("no") << std::endl;
-    std::cout << "str(\"yes\").equalsIgnoreCase(\"YES\"): " << str("yes").equalsIgnoreCase("yes") << std::endl;
+    std::cout << "str(\"yes\").equalsIgnoreCase(\"yes\"): " << str("yes").equalsIgnoreCase("yes") << std::endl;
     std::cout << "str(\"yes\").equalsIgnoreCase(\"YES\"): " << str("yes").equalsIgnoreCase("YES") << "\n" << std::endl;
 
     std::cout << "str(1).tod(): " << str(1).tod() << std::endl;

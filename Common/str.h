@@ -51,10 +51,8 @@ public:
         return true;
     }
 
-    std::string string()
-    {
-        return *this;
-    }
+    std::string& string() { return *this; }
+    const std::string& string() const { return *this; }
 
     float tof(size_t* idx = nullptr) const { return std::stof(*this, idx); }
     double tod(size_t* idx = nullptr) const { return std::stod(*this, idx); }
