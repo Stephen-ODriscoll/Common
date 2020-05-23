@@ -43,16 +43,14 @@ public:
     bool equals(const str& s) const { return _Equal(s); }
     bool equalsIgnoreCase(const str& s) const
     {
-        if (size() != s.size()) return false;
-
-        for (auto it1 = begin(), it2 = s.begin(); it1 < end(); ++it1, ++it2)
-            if (std::tolower(*it1) != std::tolower(*it2)) return false;
-
-        return true;
+        return (size() == s.size()) &&
+            std::equal(begin(), end(), s.begin(),
+                [](char c1, char c2) { return (c1 == c2) || (std::tolower(c1) == std::tolower(c2)); }
+            );
     }
 
-    std::string& string() { return *this; }
-    const std::string& string() const { return *this; }
+    std::string& string() { return *this; }                 // No copy
+    const std::string& string() const { return *this; }     // No copy
 
     float tof(size_t* idx = nullptr) const { return std::stof(*this, idx); }
     double tod(size_t* idx = nullptr) const { return std::stod(*this, idx); }
