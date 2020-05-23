@@ -182,7 +182,7 @@ void testStr()
     std::cout << "str(\"yes\").equals(\"yes\"): " << str("yes").equals("yes") << std::endl;
     std::cout << "str(\"yes\").equals(\"YES\"): " << str("yes").equals("YES") << "\n" << std::endl;
 
-    std::cout << "str(\"yes\").equalsIgnoreCase(\"NO\"):  " << str("yes").equalsIgnoreCase("no") << std::endl;
+    std::cout << "str(\"yes\").equalsIgnoreCase(\"no\"):  " << str("yes").equalsIgnoreCase("no") << std::endl;
     std::cout << "str(\"yes\").equalsIgnoreCase(\"yes\"): " << str("yes").equalsIgnoreCase("yes") << std::endl;
     std::cout << "str(\"yes\").equalsIgnoreCase(\"YES\"): " << str("yes").equalsIgnoreCase("YES") << "\n" << std::endl;
 
