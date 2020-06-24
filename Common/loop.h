@@ -1,5 +1,5 @@
 #pragma once
-
+/*
 #define trav(a, x) for(auto& a : x)     // a traverses x.
 
 #define up(i, a, b)             for(auto i = a; i < b; ++i)             // i increments from a to b exclusive.
@@ -26,3 +26,5 @@
 #define rpar(a, b, x, y)            for (auto a = std::rbegin(x), b = std::rbegin(y); a < std::rend(x) && b < std::rend(y); ++a, ++b)       // a and b reverse iterate over x and y.
 #define parwith(a, b, x, y, ...)    for (auto a = std::begin(x), b = std::begin(y); a < std::end(x) && b < std::end(y); __VA_ARGS__)        // a and b are set to begin of x and y. either a or b must reach end().
 #define rparwith(a, b, x, y, ...)   for (auto a = std::rbegin(x), b = std::rbegin(y); a < std::rend(x) && b < std::rend(y); __VA_ARGS__)    // a and b are set to rbegin of x and y. either a or b must reach rend().
+
+*/
