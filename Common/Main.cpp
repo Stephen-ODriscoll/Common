@@ -148,8 +148,10 @@ void testLoop()
 
 void testStr()
 {
+    std::cout << "str(): " << str() << std::endl;
     std::cout << "str('t'): " << str('t') << std::endl;
     std::cout << "str(\"test\"): " << str("test") << std::endl;
+    std::cout << "str(\"test\", 0, 2) : " << str("test", 0, 2) << std::endl;
     std::cout << "str(str(\"test\")): " << str(str("test")) << std::endl;
     std::cout << "str(std::string(\"test\"): " << str(std::string("test")) << std::endl;
     std::cout << "std::string(str(\"test\")): " << std::string(str("test")) << std::endl;

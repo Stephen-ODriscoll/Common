@@ -10,6 +10,7 @@ public:
 
     template<typename T>
     str(const T& t) : std::string(std::to_string(t)) { }
+    str() : std::string() { }
     str(const char c) : std::string(&c, 1) { }
     str(const std::string& s) : std::string(s) { }
     str(const bool b) : std::string(b ? "true" : "false") { }
