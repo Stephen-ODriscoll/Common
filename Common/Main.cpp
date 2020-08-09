@@ -1,8 +1,8 @@
+#include <iostream>
+
+#include "str.h"
 #include "func.h"
 #include "loop.h"
-#include "str.h"
-
-#include <iostream>
 
 
 void testFunc()
@@ -17,15 +17,13 @@ void testFunc()
 }
 
 void testLoop()
-{/*
+{
     std::vector<int> numbers = { 0, 1, 2, 3, 4 };
     std::vector<int> numbers2 = { 3, 4, 5, 6, 7 };
 
     std::cout << "trav(number, numbers): ";
     trav(number, numbers)
-    {
         std::cout << number << ", ";
-    }
     std::cout << "\n" << std::endl;
 
     // up
@@ -144,7 +142,7 @@ void testLoop()
             std::cout << *it << " and " << *it2 << ", ";
         std::cout << "\n" << std::endl;
     }
-*/}
+}
 
 void testStr()
 {

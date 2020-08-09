@@ -1,5 +1,37 @@
 #pragma once
-/*
+
+// Header for additional loopiing functionality
+// Include this file last otherwise some of these macros may interfere with other files
+
+// Undefine just incase some other file was using them
+#undef trav
+
+#undef up
+#undef up2
+#undef upwith
+#undef up2with
+
+#undef down
+#undef down2
+#undef downwith
+#undef down2with
+
+#undef iter
+#undef riter
+#undef iterwith
+#undef riterwith
+
+#undef parone
+#undef rparone
+#undef paronewith
+#undef rparonewith
+
+#undef par
+#undef rpar
+#undef parwith
+#undef rparwith
+
+
 #define trav(a, x) for(auto& a : x)     // a traverses x.
 
 #define up(i, a, b)             for(auto i = a; i < b; ++i)             // i increments from a to b exclusive.
@@ -26,5 +58,3 @@
 #define rpar(a, b, x, y)            for (auto a = std::rbegin(x), b = std::rbegin(y); a < std::rend(x) && b < std::rend(y); ++a, ++b)       // a and b reverse iterate over x and y.
 #define parwith(a, b, x, y, ...)    for (auto a = std::begin(x), b = std::begin(y); a < std::end(x) && b < std::end(y); __VA_ARGS__)        // a and b are set to begin of x and y. either a or b must reach end().
 #define rparwith(a, b, x, y, ...)   for (auto a = std::rbegin(x), b = std::rbegin(y); a < std::rend(x) && b < std::rend(y); __VA_ARGS__)    // a and b are set to rbegin of x and y. either a or b must reach rend().
-
-*/
