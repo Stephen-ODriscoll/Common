@@ -7,12 +7,12 @@
 
 void testFunc()
 {
-    std::cout << "min(8, 5): " << min(8, 5) << std::endl;
-    std::cout << "min(5, 8): " << min(5, 8) << std::endl;
+    std::cout << "min(8, 5): " << min(8, 5) << "\n";
+    std::cout << "min(5, 8): " << min(5, 8) << "\n";
     std::cout << "min(5, 5): " << min(5, 5) << "\n" << std::endl;
 
-    std::cout << "max(5, 8): " << max(5, 8) << std::endl;
-    std::cout << "max(8, 5): " << max(8, 5) << std::endl;
+    std::cout << "max(5, 8): " << max(5, 8) << "\n";
+    std::cout << "max(8, 5): " << max(8, 5) << "\n";
     std::cout << "max(8, 8): " << max(8, 8) << "\n" << std::endl;
 }
 
@@ -31,17 +31,17 @@ void testLoop()
         std::cout << "up(i, 0, 5):           ";
         up(i, 0, 5)
             std::cout << i << ", ";
-        std::cout << std::endl;
+        std::cout << "\n";
 
         std::cout << "upwith(i, 0, 5, ++i):  ";
         upwith(i, 0, 5, ++i)
             std::cout << i << ", ";
-        std::cout << std::endl;
+        std::cout << "\n";
 
         std::cout << "up2(i, 0, 5):          ";
         up2(i, 0, 5)
             std::cout << i << ", ";
-        std::cout << std::endl;
+        std::cout << "\n";
 
         std::cout << "up2with(i, 0, 5, ++i): ";
         up2with(i, 0, 5, ++i)
@@ -54,17 +54,17 @@ void testLoop()
         std::cout << "down(i, 5, 0):           ";
         down(i, 5, 0)
             std::cout << i << ", ";
-        std::cout << std::endl;
+        std::cout << "\n";
 
         std::cout << "downwith(i, 5, 0, --i):  ";
         downwith(i, 5, 0, --i)
             std::cout << i << ", ";
-        std::cout << std::endl;
+        std::cout << "\n";
 
         std::cout << "down2(i, 5, 0):          ";
         down2(i, 5, 0)
             std::cout << i << ", ";
-        std::cout << std::endl;
+        std::cout << "\n";
 
         std::cout << "down2with(i, 5, 0, --i): ";
         down2with(i, 5, 0, --i)
@@ -77,17 +77,17 @@ void testLoop()
         std::cout << "iter(it, numbers):            ";
         iter(it, numbers)
             std::cout << *it << ", ";
-        std::cout << std::endl;
+        std::cout << "\n";
 
         std::cout << "iterwith(it, numbers, ++it):  ";
         iterwith(it, numbers, ++it)
             std::cout << *it << ", ";
-        std::cout << std::endl;
+        std::cout << "\n";
 
         std::cout << "riter(it, numbers):           ";
         riter(it, numbers)
             std::cout << *it << ", ";
-        std::cout << std::endl;
+        std::cout << "\n";
 
         std::cout << "riterwith(it, numbers, ++it): ";
         riterwith(it, numbers, ++it)
@@ -100,17 +100,17 @@ void testLoop()
         std::cout << "parone(it, it2, numbers, numbers2):                   ";
         parone(it, it2, numbers, numbers2)
             std::cout << *it << " and " << *it2 << ", ";
-        std::cout << std::endl;
+        std::cout << "\n";
 
         std::cout << "paronewith(it, it2, numbers, numbers2, ++it, ++it2):  ";
         paronewith(it, it2, numbers, numbers2, ++it, ++it2)
             std::cout << *it << " and " << *it2 << ", ";
-        std::cout << std::endl;
+        std::cout << "\n";
 
         std::cout << "rparone(it, it2, numbers, numbers2):                  ";
         rparone(it, it2, numbers, numbers2)
             std::cout << *it << " and " << *it2 << ", ";
-        std::cout << std::endl;
+        std::cout << "\n";
 
         std::cout << "rparonewith(it, it2, numbers, numbers2, ++it, ++it2): ";
         rparonewith(it, it2, numbers, numbers2, ++it, ++it2)
@@ -125,17 +125,17 @@ void testLoop()
         std::cout << "par(it, it2, numbers, numbers2):                   ";
         par(it, it2, numbers, numbers2)
             std::cout << *it << " and " << *it2 << ", ";
-        std::cout << std::endl;
+        std::cout << "\n";
 
         std::cout << "parwith(it, it2, numbers, numbers2, ++it, ++it2):  ";
         parwith(it, it2, numbers, numbers2, ++it, ++it2)
             std::cout << *it << " and " << *it2 << ", ";
-        std::cout << std::endl;
+        std::cout << "\n";
 
         std::cout << "rpar(it, it2, numbers, numbers2):                  ";
         rpar(it, it2, numbers, numbers2)
             std::cout << *it << " and " << *it2 << ", ";
-        std::cout << std::endl;
+        std::cout << "\n";
 
         std::cout << "rparwith(it, it2, numbers, numbers2, ++it, ++it2): ";
         rparwith(it, it2, numbers, numbers2, ++it, ++it2)
@@ -146,58 +146,63 @@ void testLoop()
 
 void testStr()
 {
-    std::cout << "str(): " << str() << std::endl;
-    std::cout << "str('t'): " << str('t') << std::endl;
-    std::cout << "str(\"test\"): " << str("test") << std::endl;
-    std::cout << "str(\"test\", 0, 2) : " << str("test", 0, 2) << std::endl;
-    std::cout << "str(str(\"test\")): " << str(str("test")) << std::endl;
-    std::cout << "str(std::string(\"test\"): " << str(std::string("test")) << std::endl;
-    std::cout << "std::string(str(\"test\")): " << std::string(str("test")) << std::endl;
-    std::cout << "str(\"test\").string())): " << str("test").string() << std::endl;
+    std::cout << "str(): " << str() << "\n";
+    std::cout << "str('t'): " << str('t') << "\n";
+    std::cout << "str(\"test\"): " << str("test") << "\n";
+    std::cout << "str(\"test\", 0, 2) : " << str("test", 0, 2) << "\n";
+    std::cout << "str(str(\"test\")): " << str(str("test")) << "\n";
+    std::cout << "str(std::string(\"test\"): " << str(std::string("test")) << "\n";
+    std::cout << "std::string(str(\"test\")): " << std::string(str("test")) << "\n";
+    std::cout << "str(\"test\").string())): " << str("test").string() << "\n";
     str test("test"); test.string() = "testModified";
     const str testConst("test"); testConst.string();
-    std::cout << "str test(\"test\"); test.string() = \"testModified\";: " << test << "\n" << std::endl;
+    std::cout << "str test(\"test\"); test.string() = \"testModified\"; test: " << test << "\n" << std::endl;
     
 
-    std::cout << "str(1): " << str(1) << std::endl;
-    std::cout << "str(1u): " << str(1u) << std::endl;
-    std::cout << "str(1l): " << str(1l) << std::endl;
-    std::cout << "str(1ul): " << str(1ul) << std::endl;
-    std::cout << "str(1ll): " << str(1ll) << std::endl;
-    std::cout << "str(1ull): " << str(1ull) << std::endl;
-    std::cout << "str(1.f): " << str(1.f) << std::endl;
+    std::cout << "str(1): " << str(1) << "\n";
+    std::cout << "str(1u): " << str(1u) << "\n";
+    std::cout << "str(1l): " << str(1l) << "\n";
+    std::cout << "str(1ul): " << str(1ul) << "\n";
+    std::cout << "str(1ll): " << str(1ll) << "\n";
+    std::cout << "str(1ull): " << str(1ull) << "\n";
+    std::cout << "str(1.f): " << str(1.f) << "\n";
     std::cout << "str(1.): " << str(1.) << "\n" << std::endl;
     
 
-    std::cout << "str(true): " << str(true) << std::endl;
+    std::cout << "str(true): " << str(true) << "\n";
     std::cout << "str(false): " << str(false) << "\n" << std::endl;
 
     std::vector<int> numbers{ 0, 1, 2, 3, 4 };
-    std::cout << "str(numbers): " << str(numbers) << std::endl;
-    std::cout << "str(numbers, \", \"): " << str(numbers, ", ") << std::endl;
-    std::cout << "str(str(\"a b c\").split()): " << str(str("a b c").split()) << std::endl;
-    std::cout << "str(str(\"a  b  c\").split()): " << str(str("a  b  c").split()) << "\n" << std::endl;
+    std::cout << "str(numbers): " << str(numbers) << "\n";
+    std::cout << "str(numbers, \", \"): " << str(numbers, ", ") << "\n";
+    std::cout << "str(str(\"a b c\").split()): " << str(str("a b c").split()) << "\n";
+    std::cout << "str(str(\"a  b  c\").split()): " << str(str("a  b  c").split()) << "\n";
+    std::cout << "str(str(\"atestbtestc\").split(\"test\")): " << str(str("atestbtestc").split("test")) << "\n" << std::endl;
 
-    std::cout << "str(\"yes\").equals(\"no\"):  " << str("yes").equals("no") << std::endl;
-    std::cout << "str(\"yes\").equals(\"yes\"): " << str("yes").equals("yes") << std::endl;
+    std::cout << "str(\"yes\").equals(\"no\"):  " << str("yes").equals("no") << "\n";
+    std::cout << "str(\"yes\").equals(\"yes\"): " << str("yes").equals("yes") << "\n";
     std::cout << "str(\"yes\").equals(\"YES\"): " << str("yes").equals("YES") << "\n" << std::endl;
 
-    std::cout << "str(\"yes\").equalsIgnoreCase(\"no\"):  " << str("yes").equalsIgnoreCase("no") << std::endl;
-    std::cout << "str(\"yes\").equalsIgnoreCase(\"yes\"): " << str("yes").equalsIgnoreCase("yes") << std::endl;
+    std::cout << "str(\"yes\").equalsIgnoreCase(\"no\"):  " << str("yes").equalsIgnoreCase("no") << "\n";
+    std::cout << "str(\"yes\").equalsIgnoreCase(\"yes\"): " << str("yes").equalsIgnoreCase("yes") << "\n";
     std::cout << "str(\"yes\").equalsIgnoreCase(\"YES\"): " << str("yes").equalsIgnoreCase("YES") << "\n" << std::endl;
 
-    std::cout << "str(1).tod(): " << str(1).tod() << std::endl;
-    std::cout << "str(1).tof(): " << str(1).tof() << std::endl;
-    std::cout << "str(1).toi(): " << str(1).toi() << std::endl;
-    std::cout << "str(1).tol(): " << str(1).tol() << std::endl;
-    std::cout << "str(1).told(): " << str(1).told() << std::endl;
-    std::cout << "str(1).toll(): " << str(1).toll() << std::endl;
-    std::cout << "str(1).toul(): " << str(1).toul() << std::endl;
+    std::cout << "str(\"testing\").contains(\"test\"): " << str("testing").contains("test") << "\n";
+    std::cout << "str(\"testing\").contains(\"fail\"): " << str("testing").contains("fail") << "\n" << std::endl;
+
+    std::cout << "str(1).tod(): " << str(1).tod() << "\n";
+    std::cout << "str(1).tof(): " << str(1).tof() << "\n";
+    std::cout << "str(1).toi(): " << str(1).toi() << "\n";
+    std::cout << "str(1).tol(): " << str(1).tol() << "\n";
+    std::cout << "str(1).told(): " << str(1).told() << "\n";
+    std::cout << "str(1).toll(): " << str(1).toll() << "\n";
+    std::cout << "str(1).toul(): " << str(1).toul() << "\n";
     std::cout << "str(1).toull(): " << str(1).toull() << std::endl;
 }
 
 int main()
 {
+    std::cout << "\n";
     testFunc(); std::cout << std::endl;
     testLoop(); std::cout << std::endl;
     testStr();

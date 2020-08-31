@@ -2,6 +2,7 @@
 
 #include <string>
 #include <vector>
+#include <algorithm>
 class str : public std::string  // std::string with extended functionality
 {
 public:
@@ -25,7 +26,7 @@ public:
         resize(size() - sep.size());
     }
 
-    void split(std::vector<str>& splits, const char delim = ' ') const
+    void split(std::vector<str>& splits, const str& delim = ' ') const
     {
         size_t start, end = 0;
         while ((start = find_first_not_of(delim, end)) != npos)
@@ -34,7 +35,7 @@ public:
             splits.push_back(substr(start, end - start));
         }
     }
-    std::vector<str> split(const char delim = ' ') const
+    std::vector<str> split(const str& delim = ' ') const
     {
         std::vector<str> splits;
         split(splits, delim);
@@ -49,6 +50,8 @@ public:
                 [](char c1, char c2) { return (c1 == c2) || (std::tolower(c1) == std::tolower(c2)); }
             );
     }
+
+    bool contains(const str& s, size_t i = 0Ui64) const { return (find(s, i) != npos); }
 
     std::string& string() { return *this; }                 // No copy
     const std::string& string() const { return *this; }     // No copy
