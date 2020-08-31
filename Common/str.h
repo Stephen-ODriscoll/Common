@@ -1,5 +1,8 @@
 #pragma once
 
+// I am aware that extending the std::string class is frowned upon
+// but for my own personal use it's made certain aspects of coding a lot simpler.
+
 #include <string>
 #include <vector>
 #include <algorithm>
