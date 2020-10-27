@@ -1,4 +1,5 @@
 #include <iostream>
+#include <chrono>
 
 #include "str.h"
 #include "func.h"
@@ -149,7 +150,6 @@ void testStr()
     std::cout << "str(): " << str() << "\n";
     std::cout << "str('t'): " << str('t') << "\n";
     std::cout << "str(\"test\"): " << str("test") << "\n";
-    std::cout << "str(\"test\", 0, 2) : " << str("test", 0, 2) << "\n";
     std::cout << "str(str(\"test\")): " << str(str("test")) << "\n";
     std::cout << "str(std::string(\"test\"): " << str(std::string("test")) << "\n";
     std::cout << "std::string(str(\"test\")): " << std::string(str("test")) << "\n";
@@ -172,12 +172,18 @@ void testStr()
     std::cout << "str(true): " << str(true) << "\n";
     std::cout << "str(false): " << str(false) << "\n" << std::endl;
 
+    std::vector<str> strings;
     std::vector<int> numbers{ 0, 1, 2, 3, 4 };
-    std::cout << "str(numbers): " << str(numbers) << "\n";
-    std::cout << "str(numbers, \", \"): " << str(numbers, ", ") << "\n";
-    std::cout << "str(str(\"a b c\").split()): " << str(str("a b c").split()) << "\n";
-    std::cout << "str(str(\"a  b  c\").split()): " << str(str("a  b  c").split()) << "\n";
-    std::cout << "str(str(\"atestbtestc\").split(\"test\")): " << str(str("atestbtestc").split("test")) << "\n" << std::endl;
+    std::vector<int*> pNumbers{ &numbers[0], &numbers[1], &numbers[2], &numbers[3], &numbers[4] };
+    std::cout << "str(numbers): " << str(numbers.begin(), numbers.end()) << "\n";
+    std::cout << "str(numbers, \", \"): " << str(numbers.begin(), numbers.end(), ", ") << "\n";
+    std::cout << "str(pNumbers, [](const int* pNumber) { return *pNumber; }, \", \")): " << str(pNumbers.begin(), pNumbers.end(), [](int* pNumber) -> str { return *pNumber; }, ", ") << "\n";
+    strings = str("a b c").split();
+    std::cout << "strings = str(\"a b c\").split(); str(strings.begin(), strings.end()): " << str(strings.begin(), strings.end()) << "\n";
+    strings = str("a  b  c").split();
+    std::cout << "strings = str(\"a  b  c\").split(); str(strings.begin(), strings.end()): " << str(strings.begin(), strings.end()) << "\n";
+    strings = str("atestbtestc").split("test");
+    std::cout << "strings = str(\"atestbtestc\").split(\"test\"); str(strings.begin(), strings.end()): " << str(strings.begin(), strings.end()) << "\n" << std::endl;
 
     std::cout << "str(\"yes\").equals(\"no\"):  " << str("yes").equals("no") << "\n";
     std::cout << "str(\"yes\").equals(\"yes\"): " << str("yes").equals("yes") << "\n";
