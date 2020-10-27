@@ -30,17 +30,7 @@ public:
     str(const unsigned long long ull) : std::string(std::to_string(ull)) { }
 
     
-    // Constructor for iterable types - must work with std::begin() and std::end()
-    template<typename Iterator>
-    str(Iterator it1, Iterator it2, str func(typename std::iterator_traits<Iterator>::value_type), const str& sep = ", ") : std::string()
-    {
-        if (&*it1 <= &*it2) return;
-
-        for (--it2; it1 != it2; ++it1)
-            append(func(*it1) + sep);
-        append(func(*it1));
-    }
-    // Constructor for iterable types - must work with std::begin() and std::end()
+    // Constructor for iterators
     template<typename Iterator>
     str(Iterator it1, Iterator it2, const str& sep = ", ") : std::string()
     {
@@ -49,6 +39,16 @@ public:
         for (--it2; it1 != it2; ++it1)
             append(str(*it1) + sep);
         append(str(*it1));
+    }
+    // Constructor for iterators, function must take in the value type exactly including whether it's const or not
+    template<typename Iterator>
+    str(Iterator it1, Iterator it2, str func(typename std::iterator_traits<Iterator>::value_type), const str& sep = ", ") : std::string()
+    {
+        if (&*it1 <= &*it2) return;
+
+        for (--it2; it1 != it2; ++it1)
+            append(func(*it1) + sep);
+        append(func(*it1));
     }
 
     void split(std::vector<str>& splits, const str& delim = " ") const
