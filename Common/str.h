@@ -3,6 +3,9 @@
 // I am aware that extending the std::string class is frowned upon
 // but for my own personal use it's made certain aspects of programming a lot simpler.
 
+#define DEFAULT_SEP ", "
+#define DEFAULT_DELIM " "
+
 #include <string>
 #include <vector>
 class str : public std::string  // std::string with extended functionality
@@ -29,29 +32,26 @@ public:
     str(const unsigned long ul) : std::string(std::to_string(ul)) { }
     str(const unsigned long long ull) : std::string(std::to_string(ull)) { }
 
-    
-    // Constructor for iterators
-    template<typename Iterator>
-    str(Iterator it1, Iterator it2, const str& sep = ", ") : std::string()
-    {
-        if (&*it1 <= &*it2) return;
-
-        for (--it2; it1 != it2; ++it1)
-            append(str(*it1) + sep);
-        append(str(*it1));
-    }
     // Constructor for iterators, function must take in the value type exactly including whether it's const or not
     template<typename Iterator>
-    str(Iterator it1, Iterator it2, str func(typename std::iterator_traits<Iterator>::value_type), const str& sep = ", ") : std::string()
+    str(const Iterator first, const Iterator last, str func(typename std::iterator_traits<Iterator>::value_type), const str& sep = DEFAULT_SEP) : std::string()
     {
-        if (&*it1 <= &*it2) return;
+        _Adl_verify_range(first, last);
+        auto it1 = _Get_unwrapped(first), it2 = _Get_unwrapped(last);
+
+        if (it1 == it2) return;
 
         for (--it2; it1 != it2; ++it1)
             append(func(*it1) + sep);
         append(func(*it1));
     }
+    // Constructor for iterators
+    template<typename Iterator>
+    str(const Iterator first, const Iterator last, const str& sep = DEFAULT_SEP) : str(first, last,
+        [](typename std::iterator_traits<Iterator>::value_type item) -> str { return item; }, sep) { }
 
-    void split(std::vector<str>& splits, const str& delim = " ") const
+
+    void split(std::vector<str>& splits, const str& delim = DEFAULT_DELIM) const
     {
         size_t start, end = 0;
         while ((start = find_first_not_of(delim, end)) != npos)
@@ -60,7 +60,7 @@ public:
             splits.push_back(substr(start, end - start));
         }
     }
-    std::vector<str> split(const str& delim = " ") const
+    std::vector<str> split(const str& delim = DEFAULT_DELIM) const
     {
         std::vector<str> splits;
         split(splits, delim);
