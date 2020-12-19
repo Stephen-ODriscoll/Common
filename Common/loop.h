@@ -44,10 +44,10 @@
 #define downwith(i, a, b, ...)  for(auto i = a; b < i; __VA_ARGS__)     // i is set to a and must reach less than b.
 #define down2with(i, a, b, ...) for(auto i = a; b <= i; __VA_ARGS__)    // i is set to a and must reach b or less.
 
-#define iter(a, x)              for (auto it = std::begin(x); a != std::end(x); ++a)             // a iterates over x.
-#define riter(a, x)             for (auto it = std::rbegin(x); a != std::rend(x); ++a)           // a reverse iterates over x.
-#define iterwith(a, x, ...)     for (auto it = std::begin(x); a != std::end(x); __VA_ARGS__)     // a is set to begin of x and must reach end.
-#define riterwith(a, x, ...)    for (auto it = std::rbegin(x); a != std::rend(x); __VA_ARGS__)   // a is set to rbegin of x and must reach rend.
+#define iter(a, x)              for (auto a = std::begin(x); a != std::end(x); ++a)             // a iterates over x.
+#define riter(a, x)             for (auto a = std::rbegin(x); a != std::rend(x); ++a)           // a reverse iterates over x.
+#define iterwith(a, x, ...)     for (auto a = std::begin(x); a != std::end(x); __VA_ARGS__)     // a is set to begin of x and must reach end.
+#define riterwith(a, x, ...)    for (auto a = std::rbegin(x); a != std::rend(x); __VA_ARGS__)   // a is set to rbegin of x and must reach rend.
 
 #define parone(a, b, x, y)              for (auto a = std::begin(x), b = std::begin(y); a != std::end(x); ++a, ++b)          // a and b iterate over x and y. a must reach end() before or with b.
 #define rparone(a, b, x, y)             for (auto a = std::rbegin(x), b = std::rbegin(y); a != std::rend(x); ++a, ++b)       // a and b reverse iterate over x and y. a must reach rend() before or with b.
