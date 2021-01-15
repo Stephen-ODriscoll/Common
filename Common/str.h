@@ -50,6 +50,9 @@ public:
     str(const Iterator first, const Iterator last, const str& sep = DEFAULT_SEP) : str(first, last,
         [](typename std::iterator_traits<Iterator>::value_type item) -> str { return item; }, sep) { }
 
+    // Make a str from an initializer list, e.g. {1, "test", 0.5}
+    str(const std::initializer_list<str>& list, const str& sep = DEFAULT_SEP) : str(list.begin(), list.end(), sep) { }
+
 
     void split(std::vector<str>& splits, const str& delim = DEFAULT_DELIM) const
     {

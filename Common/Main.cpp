@@ -172,6 +172,9 @@ void testStr()
     std::cout << "str(true): " << str(true) << "\n";
     std::cout << "str(false): " << str(false) << "\n" << std::endl;
 
+    std::cout << "str({ 1, 2, 3 }): " << str({ 1, 2, 3 }) << "\n";
+    std::cout << "str({ 1, \"hello\", true }, \" \"): " << str({ 1, "hello", true }, " ") << "\n" << std::endl;
+
     std::vector<str> strings;
     std::vector<int> numbers{ 0, 1, 2, 3, 4 };
     std::vector<int*> pNumbers{ &numbers[0], &numbers[1], &numbers[2], &numbers[3], &numbers[4] };
