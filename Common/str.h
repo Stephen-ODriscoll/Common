@@ -34,10 +34,10 @@ public:
 
     // Constructor for iterators, function must take in the value type exactly including whether it's const or not
     template<typename Iterator>
-    str(const Iterator first, const Iterator last, str func(typename std::iterator_traits<Iterator>::value_type), const str& sep = DEFAULT_SEP) : std::string()
+    str(const Iterator begin, const Iterator end, str func(typename std::iterator_traits<Iterator>::value_type), const str& sep = DEFAULT_SEP) : std::string()
     {
-        _Adl_verify_range(first, last);
-        auto it1 = _Get_unwrapped(first), it2 = _Get_unwrapped(last);
+        _Adl_verify_range(begin, end);
+        auto it1 = _Get_unwrapped(begin), it2 = _Get_unwrapped(end);
 
         if (it1 == it2) return;
 
@@ -47,7 +47,7 @@ public:
     }
     // Constructor for iterators
     template<typename Iterator>
-    str(const Iterator first, const Iterator last, const str& sep = DEFAULT_SEP) : str(first, last,
+    str(const Iterator begin, const Iterator end, const str& sep = DEFAULT_SEP) : str(begin, end,
         [](typename std::iterator_traits<Iterator>::value_type item) -> str { return item; }, sep) { }
 
     // Make a str from an initializer list, e.g. {1, "test", 0.5}
